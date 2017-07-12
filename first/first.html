@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<script src="first.js"></script>
+</head>
+<body>
+	<div>
+		<div>
+			<span>addTask</span><input type="text" id="add"/><button onclick="execute('add')">실행</button>
+		</div>
+		<div>
+			<span>removeTask</span><input type="text" id="remove"/><button onclick="execute('remove')">실행</button>
+		</div>
+		<div>
+			<span>changeState</span><input type="text" id="change"/>,<input type="text" id="state"/><button onclick="execute('changeState')">실행</button>
+		</div>
+	</div>
+
+	<p>View</p>
+	<div>
+
+	</div>
+
+	<script>
+	var execute = function(target) {
+		switch(target) {
+			case 'add' :
+				var title = document.getElementById('add').value;
+				addTask(title);
+				break;
+			case 'remove' :
+				var id = document.getElementById('remove').value;
+				removeTask(id);
+				break;
+			case 'changeState' :
+				var id = document.getElementById('change').value;
+				var state = document.getElementById('state').value;
+				changeState(id , state);
+				break;
+			default :
+				console.log('execute error');
+				break;
+		}
+	}
+	</script>
+</body>
+</html>
